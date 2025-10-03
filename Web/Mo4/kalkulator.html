@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .calculator {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .btn {
+            transition: all 0.2s ease;
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        .btn:active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50 flex items-center justify-center p-6">
+    <div class="calculator bg-white rounded-2xl p-6 w-full max-w-sm">
+        <div class="display bg-gray-100 rounded-lg p-4 mb-4 text-right text-2xl font-semibold h-16 overflow-hidden" id="display">0</div>
+        
+        <div class="grid grid-cols-4 gap-3">
+            <!-- Baris 1 -->
+            <button class="btn col-span-2 bg-red-500 text-white rounded-lg py-3 font-medium hover:bg-red-600" onclick="clearDisplay()">C</button>
+            <button class="btn bg-yellow-500 text-white rounded-lg py-3 font-medium hover:bg-yellow-600" onclick="deleteChar()">⌫</button>
+            <button class="btn bg-indigo-500 text-white rounded-lg py-3 font-medium hover:bg-indigo-600" onclick="appendToDisplay('/')">÷</button>
+            
+            <!-- Baris 2 -->
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('7')">7</button>
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('8')">8</button>
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('9')">9</button>
+            <button class="btn bg-indigo-500 text-white rounded-lg py-3 font-medium hover:bg-indigo-600" onclick="appendToDisplay('*')">×</button>
+            
+            <!-- Baris 3 -->
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('4')">4</button>
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('5')">5</button>
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('6')">6</button>
+            <button class="btn bg-indigo-500 text-white rounded-lg py-3 font-medium hover:bg-indigo-600" onclick="appendToDisplay('-')">-</button>
+            
+            <!-- Baris 4 -->
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('1')">1</button>
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('2')">2</button>
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('3')">3</button>
+            <button class="btn bg-indigo-500 text-white rounded-lg py-3 font-medium hover:bg-indigo-600" onclick="appendToDisplay('+')">+</button>
+            
+            <!-- Baris 5 -->
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('0')">0</button>
+            <button class="btn bg-gray-200 rounded-lg py-3 font-medium hover:bg-gray-300" onclick="appendToDisplay('.')">.</button>
+            <button class="btn col-span-2 bg-green-500 text-white rounded-lg py-3 font-medium hover:bg-green-600" onclick="calculate()">=</button>
+        </div>
+    </div>
+
+    <script>
+        function appendToDisplay(value) {
+            const display = document.getElementById('display');
+            if (display.innerText === '0' && value !== '.') {
+                display.innerText = value;
+            } else {
+                display.innerText += value;
+            }
+        }
+        
+        function clearDisplay() {
+            document.getElementById('display').innerText = '0';
+        }
+        
+        function deleteChar() {
+            const display = document.getElementById('display');
+            if (display.innerText.length === 1 || display.innerText === 'Error') {
+                display.innerText = '0';
+            } else {
+                display.innerText = display.innerText.slice(0, -1);
+            }
+        }
+        
+        function calculate() {
+            const display = document.getElementById('display');
+            try {
+                // Mengganti simbol ÷ dengan / dan × dengan * untuk evaluasi JavaScript
+                let expression = display.innerText.replace(/÷/g, '/').replace(/×/g, '*');
+                display.innerText = eval(expression);
+            } catch (error) {
+                display.innerText = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

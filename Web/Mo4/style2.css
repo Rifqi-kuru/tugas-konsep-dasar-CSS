@@ -1,0 +1,77 @@
+/* Membungkus konten */
+body {
+    width: 600px; 
+    margin: auto;
+    background: #66E5C0; /* hijau muda untuk background wrapper */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Style awal menu */
+#menu ul {
+    font-family: Arial, Verdana;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: inline-block; /* agar menu center */
+    background: #0f3b0f;   /* hijau tua untuk menu utama */
+}
+
+/* Membuat menu utama horizontal */
+#menu ul li {
+    display: block;
+    position: relative;
+    float: left;
+}
+
+/* Sembunyikan submenu */
+#menu li ul {
+    display: none;
+    position: absolute;
+    background: #333;   /* abu gelap submenu */
+    min-width: 200px;
+    z-index: 999;
+    padding: 0;
+}
+
+/* Style awal menu utama */
+#menu ul li a {
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 20px;
+    white-space: nowrap;
+}
+
+/* Hover menu utama */
+#menu ul li a:hover {
+    background: #228B22; /* hijau sedang */
+}
+
+/* Munculkan submenu saat hover */
+#menu li:hover ul {
+    display: block;
+    top: 100%; /* muncul tepat di bawah menu utama */
+    left: 0;
+}
+
+/* Style submenu item */
+#menu li ul li {
+    float: none;
+    font-size: 13px;
+    border-bottom: 1px solid #555;
+}
+
+/* Submenu normal */
+#menu li ul li a {
+    background: #3b3b3b;
+    padding: 10px;
+    text-align: left;
+}
+
+/* Hover submenu */
+#menu li ul li a:hover {
+    background: #7FFFD4; /* hijau muda highlight */
+    color: #000;
+}

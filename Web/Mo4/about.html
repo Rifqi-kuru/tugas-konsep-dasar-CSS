@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>About me</title>
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      /* Custom small styling */
+      .hero {
+        background: linear-gradient(135deg, #16c1f586 0%, #6b2ddf6d 100%);
+        backdrop-filter: blur(4px);
+      }
+      .project-card img{
+        object-fit: cover;
+        height: 180px;
+      }
+      .rounded-avatar{
+        width: 140px;
+        height: 140px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+      <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Biodata</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero py-5">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-md-7">
+            <h1 class="display-5 fw-bold">Halo, saya <span class="text-primary">Rifqi Fitriansyah</span></h1>
+            <p class="lead">Saya adalah seorang mahasiswa dari jurusan s1 teknik informatika.</p>
+            <p>
+              <a href="#contact" class="btn btn-primary me-2">Hubungi Saya</a>
+              <a href="#projects" class="btn btn-outline-primary">Lihat Proyek</a>
+            </p>
+          </div>
+          <div class="col-md-5 text-center mt-4 mt-md-0">
+            <img src="IMG-20230909-WA0008.jpg" alt="Foto" class="rounded-circle rounded-avatar shadow-sm">
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="py-5">
+      <div class="container">
+        <div class="row g-4 align-items-center">
+          <div class="col-lg-6">
+            <h2>About Me</h2>
+            <p>Singkat bio: mahasiswa di Universitas Muhammadiyyah Kalimantan Timur.</p>
+            <ul>
+              <li>Lokasi: Samarinda, Indonesia</li>
+              <li>Pendidikan: MA</li>
+              <li>Tools: HTML, CSS, JavaScript, Bootstrap, Python.</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="card shadow-sm">
+              <div class="card-body">
+                <h5 class="card-title">Ringkasan</h5>
+                <p class="card-text">Saya selalu belajar membuat sebuah website. Saya juga suka belajar mengenai teknologi baru.</p>
+                <a href="#contact" class="btn btn-outline-primary">Ajak Kerja Sama</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-5 bg-light">
+      <div class="container">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h2 class="mb-0">Projects</h2>
+          <small class="text-muted">Beberapa proyek pilihan</small>
+        </div>
+
+        <div class="row g-4">
+          <!-- Project card 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="card project-card h-100 shadow-sm">
+              <img src="gambar kalkulator.png" class="card-img-top" alt="Project 1">
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">Project A</h5>
+                <p class="card-text">kalkulator sederhana Teknologi: HTML, CSS, JS.</p>
+                <div class="mt-auto">
+                  <a href="kalkulator.html" class="btn btn-sm btn-primary">View</a>
+                  <a href="https://github.com/Rifqi-kuru/project" class="btn btn-sm btn-outline-secondary">Repo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="py-5">
+      <div class="container">
+        <h2>Skills</h2>
+        <div class="row g-3 mt-3">
+          <div class="col-sm-6 col-md-4">
+            <div class="card shadow-sm p-3">
+              <h6>Frontend</h6>
+              <p class="mb-0">HTML, CSS, Bootstrap, JavaScript</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card shadow-sm p-3">
+              <h6>Backend</h6>
+              <p class="mb-0">Python</p>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="card shadow-sm p-3">
+              <h6>Tools</h6>
+              <p class="mb-0">Git, VS Code</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-5 bg-light">
+      <div class="container">
+        <h2>Contact</h2>
+          <div class="col-md-6">
+            <div class="card shadow-sm p-3">
+              <h5>Info Kontak</h5>
+              <p class="mb-1"><strong>Email:</strong> rifqifitriansyah28@gmail.com</p>
+              <p class="mb-1"><strong>Telepon:</strong> +62 813-4630-5535</p>
+              <p class="mb-0"><strong>Lokasi:</strong> Samarinda, Indonesia</p>
+              <hr>
+              <p class="mb-0">Link sosial: <a href="#">GitHub</a> • <a href="#">Tiktok</a> • <a href="#">Instagram</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4 text-center">
+      <div class="container">
+        <small class="text-muted">© 2025 Rifqi Fitri — Built with Bootstrap</small>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
